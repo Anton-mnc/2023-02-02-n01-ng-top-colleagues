@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: Build Angular App
-    uns-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
