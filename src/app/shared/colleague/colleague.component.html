@@ -9,7 +9,7 @@
     <div class="col-12">
       <p>{{colleague.score}}</p>
     </div>
-    <tc-like-hate (scoring)="vote($event)"></tc-like-hate>
+    <tc-like-hate [score]="colleague.score" (scoring)="vote($event)"></tc-like-hate>
   </div>
 </div>
 

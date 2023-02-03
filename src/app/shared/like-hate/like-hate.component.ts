@@ -7,6 +7,7 @@ import {LikeHate} from "../models/like-hate";
   styleUrls: ['./like-hate.component.scss']
 })
 export class LikeHateComponent {
+  @Input() score: number = 0;
   @Output() scoring = new EventEmitter<LikeHate>();
 
   like() {

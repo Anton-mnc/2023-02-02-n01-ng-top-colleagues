@@ -1,4 +1,4 @@
 <div class="d-flex justify-content-center mt-2 mb-2">
-  <button (click)="like()" class="btn btn-primary" style="margin-right: 10px">Like</button>
-  <button (click)="dislike()" class="btn btn-danger">Dislike</button>
+  <button [hidden]="score >= 1000" (click)="like()" class="btn btn-primary" style="margin-right: 10px">Like</button>
+  <button [hidden]="score <= -1000" (click)="dislike()" class="btn btn-danger">Dislike</button>
 </div>
