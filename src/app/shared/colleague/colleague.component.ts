@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {Colleague} from "../models/Colleague";
+import {Component} from '@angular/core';
+import {Colleague} from "../models/colleague";
+import {LikeHate} from "../models/like-hate";
 
 @Component({
   selector: 'tc-colleague',
@@ -7,9 +8,13 @@ import {Colleague} from "../models/Colleague";
   styleUrls: ['./colleague.component.scss']
 })
 export class ColleagueComponent {
-  colleague: Colleague={
+  colleague: Colleague = {
     photo: "https://picsum.photos/200/250",
-    pseudo:"Anton",
-    score:0,
+    pseudo: "Anton",
+    score: 0,
+  }
+
+  vote(voting: LikeHate) {
+    this.colleague.score += voting
   }
 }
