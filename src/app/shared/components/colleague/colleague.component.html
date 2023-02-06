@@ -1,7 +1,7 @@
 <div class="card text-center mb-5">
   <img class="img-thumbnail card-img-top" [src]="colleague.photo" alt=" picture colleague">
   <p class="card-title">{{colleague.pseudo | uppercase}}</p>
-  <p class="card-text">{{colleague.score}}</p>
+  <p class="card-text">{{colleague.score|score}}</p>
   <div class="row">
     <tc-like-hate [score]="colleague.score" (scoring)="vote($event)"></tc-like-hate>
   </div>
