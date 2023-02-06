@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Colleague} from "../../models/colleague";
-import {LikeHate} from "../../models/like-hate";
+import {Colleague} from "../../../models/colleague";
+import {LikeHate} from "../../../models/like-hate";
 import {ColleagueListComponent} from "../colleague-list/colleague-list.component";
 
 @Component({
