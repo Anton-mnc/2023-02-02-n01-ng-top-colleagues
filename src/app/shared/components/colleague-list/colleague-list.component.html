@@ -1,3 +1,4 @@
-<div class="row">
-  <tc-colleague class="col-3" *ngFor="let colleague of colleagues" [colleague]="colleague"></tc-colleague>
+<div class="colleague__list">
+  <tc-colleague *ngFor="let colleague of colleagues" [colleague]="colleague"
+                class="colleague__list__item"></tc-colleague>
 </div>

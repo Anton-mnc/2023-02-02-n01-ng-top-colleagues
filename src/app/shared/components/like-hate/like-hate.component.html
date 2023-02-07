@@ -1,4 +1,2 @@
-<div class="d-flex justify-content-center mt-2 mb-2">
-  <button [hidden]="score >= 1000" (click)="like()" class="btn btn-primary" style="margin-right: 10px">Like</button>
-  <button [hidden]="score <= -1000" (click)="dislike()" class="btn btn-danger">Dislike</button>
-</div>
+<button (click)="emitLike(LikeHate.LIKE)" [disabled]="likedMax">J'aime</button>
+<button (click)="emitLike(LikeHate.HATE)" [disabled]="hatedMax">Je déteste</button>

@@ -5,13 +5,8 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class ScorePipe implements PipeTransform {
 
-  transform(value: number): string {
-    let result: string;
-    if (value > 0) {
-      result = '+' + value.toString();
-    } else {
-      result = value.toString();
-    }
-    return result;
+  transform(value: number, ...args: unknown[]): string {
+    const symbole = (value > 0) ? '+' : (value < 0) ? '-' : '';
+    return `${symbole} ${Math.abs(value)}`;
   }
 }

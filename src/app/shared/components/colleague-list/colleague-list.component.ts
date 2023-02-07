@@ -1,7 +1,6 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
 import {ColleagueService} from "../../../providers/colleague.service";
-
 
 @Component({
   selector: 'tc-colleague-list',
@@ -9,10 +8,14 @@ import {ColleagueService} from "../../../providers/colleague.service";
   styleUrls: ['./colleague-list.component.scss']
 })
 export class ColleagueListComponent {
+  colleagues: Colleague[] = [];
 
-  colleagues: Colleague[];
+  constructor(private colleagueSrv: ColleagueService) {
+    this.refreshList();
+  }
 
-  constructor(private colleagueService: ColleagueService) {
-    this.colleagues = colleagueService.list();
+  refreshList() {
+    this.colleagueSrv.getAllColleagueFromApi()
+      .subscribe(listColleague => this.colleagues = listColleague);
   }
 }

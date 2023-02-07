@@ -1,9 +1,9 @@
-<div class="card text-center mb-5">
-  <img class="img-thumbnail card-img-top" [src]="colleague.photo" alt=" picture colleague">
-  <p class="card-title">{{colleague.pseudo | uppercase}}</p>
-  <p class="card-text">{{colleague.score|score}}</p>
-  <div class="row">
-    <tc-like-hate [score]="colleague.score" (scoring)="vote($event)"></tc-like-hate>
+<div class="card">
+  <img [src]="colleague.photo" [alt]="colleague.pseudo">
+  <div class="card_body">
+    <p>{{colleague.pseudo | uppercase}}</p>
+    <p>{{colleague.score | score}}</p>
   </div>
+  <tc-like-hate (scoreChange)="modifyScore($event)" [likedMax]="colleague.score >= 1000"
+                [hatedMax]="colleague.score <= -1000"></tc-like-hate>
 </div>
-

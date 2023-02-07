@@ -7,14 +7,14 @@ import {LikeHate} from "../../../models/like-hate";
   styleUrls: ['./like-hate.component.scss']
 })
 export class LikeHateComponent {
-  @Input() score: number = 0;
-  @Output() scoring = new EventEmitter<LikeHate>();
+  LikeHate = LikeHate;
 
-  like() {
-    this.scoring.emit(LikeHate.LIKE)
-  }
+  @Input() likedMax: boolean = false;
+  @Input() hatedMax: boolean = false;
 
-  dislike() {
-    this.scoring.emit(LikeHate.HATE)
+  @Output() scoreChange: EventEmitter<LikeHate> = new EventEmitter<LikeHate>();
+
+  emitLike(likehate: LikeHate) {
+    this.scoreChange.emit(likehate);
   }
 }
